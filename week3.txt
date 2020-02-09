@@ -1,0 +1,67 @@
+Week 3 : Control Flow
+
+If-else
+   if (expression)
+      statement1
+   else
+      statement2
+
+*else จะคู่กับ if ที่ใกล้ที่สุด
+*expression กลายเป็น statement ที่ใกล้ที่สุด
+
+
+Else-if
+   if (expression1)
+      statement1
+   else if(expression2)
+      statement2
+   else
+      statement3
+
+
+Switch
+    ตรวจสอบเงื่อนไขว่าค่าของ expression match กับค่าคงที่(จน.เต็ม) แล้วกระโดดมาทำงาน statement ภายใต้ค่าคงที่
+    นั้นเรื่อยๆ จนกว่าจะเจอ break แล้วหลุดออกจาก switch
+
+    - defalut (มี or ไม่มีก็ได้) => คำสั่ง statement ที่อยู่ภายใต้ defalut จะถูกทำงานเมื่อ
+      expression ไม่ match กับ case ใดเลย
+
+    Ex. 
+       int n_digits = 0;
+       int n_non_digits = 0;
+       int ch;
+       while ((ch=getchar()) != EOF) {
+           switch (ch) {
+                case '0': case '1': case '2': case '3':
+                case '4': case '5': case '6': case '7':
+                case '8': case '9':
+                   n_digits++;
+                     break;
+                default:
+                   n_non_digits++;
+                     break;
+            }
+        }
+        printf("จํานวนตวเลข ั : %d, ไมใช่ ต่ วเลข ั : %d\n", n_digits, n_non_digits);
+
+
+Loop - while & for
+While (expression)
+    statement
+    //statement T จะทำงานจนกว่าจะ F
+
+for (expr1;expr2;expr3)
+    statement
+
+    expr1,expr3 => กำหนดค่าหรือเรียกใช้ฟังก์ชัน
+    expr2 => เปรียบเทียบค่า
+
+    Ex. for(;;){
+           printf("hello\n");
+        } 
+        // infinite Loop
+
+
+Break & Continue
+break => หลุดออกจากลูป
+continue => บังคับการทำงานให้เกิดการวนซ้ำใหม่
