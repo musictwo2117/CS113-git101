@@ -1,0 +1,75 @@
+Week 4 : Functions and Program Structure - part 1
+
+*คอลไพล์เลอร์ของ C เป็น one-pass
+รูปแบบ
+ return-value-type function-name( parameter-list )
+ {
+     declarations
+     statement
+     statement
+         :
+  }
+
+  Ex. 
+     int isEven(int value)
+     {
+       if (value % 2 == 0)
+           return 1;
+       else
+           return 0;
+     }
+
+Function Prototype
+  Ex. ของ prototype
+      int isEven(int);
+  
+   //parameter-list สามารถละชื่อตัวแปรได้ แต่ไม่สามารถละประเภทข้อมูลได้
+
+
+Function - call by value
+   การส่งผ่านข้อมูล parameter จากผู้เรียกไปยังฟังก์ชันที่ถูกเรียกมีลักษณะ => pass by value
+
+
+Standrad Libary Functions and Math Libary Functions
+   -ฟังก์ชัน printf, scanf, และ getchar เป็นตย.ของฟังก์ชัน Standrad Libary Functions
+   -ฟังก์ชัน sqrt, exp, และ log เป็นตย.ของฟังก์ชัน Math Libary Functions
+
+
+Return value
+   ฟังก์ชันจะมีการส่งค่ากลับ or ฟังก์ชันที่มี return type เป็น void
+  Ex.
+     #include <stdio.h>
+     int isEven(int val)
+     {
+       if (val % 2 == 0)
+           return 1;
+       else 
+           return 0;
+     }
+     int main()
+     { int value;
+       printf("Enter an Integer Value: ");
+       scanf("%d", &value);
+       if (isEven(value) == 1)
+          printf("%d is an even number\n", value);
+       else
+          printf("%d is not an even number\n", value);
+     }
+
+
+Recursion (การเรียกซ้ำ)
+     สามารถเรียกใช้ตัวเองได้
+     **เมื่อเรียกใช้ตัวเอง โปรแกรมจะทำการสำเนาตัวแปรต่างๆภายในฟังก์ชัน
+
+    - Local Variable => ภายในฟังก์ชัน
+    - Global Variable => ภายใน int main
+
+
+Function call & Stack Frames
+    เพื่อให้โปรแกรมสามารถจัดเก็บตัวแปรได้จน.มาก แต่ก็ยังทำงานได้
+    1.) เมื่อฟังก์ชันถูกเรียกใช้ stack สร้าง (ต้องการเรียกใช้ฟังก์ชัน 1 ครั้ง)
+    2.) ฟังก์ชันทำงานเสร็จ(หรือเจอ return) stack จะถูกทำลาย โดยลำดับการทำงานจะกลับไปทำคำสั่ง
+        ณ ตน. return address (เป็นตน.คำสั่งที่ถูกทำงานหลังจากเรียกใช้ฟังก์ชันเสร็จ)
+
+        
+         
