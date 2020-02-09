@@ -1,0 +1,32 @@
+Week 5 : Functions and Program Structure - part 2
+
+Storage Classes
+   ผู้ใช้สามารถกำหนด ประเภท และข้อมูล ผ่านการใช้ Keyword auto,
+   register, exten และ static เพื่อกำหนดช่วงชีวิตในการเก้บข้อมูลตัวแปรนั้นไว้ใน memory
+     - automatic storage duration (หลังประกาศตัวแปรเหล่านี้จะไม่อยู่อีกต่อไป)
+       => auto
+       => register เพิ่มค.เร็วในการเข้าถึงตัวแปร เช่น ตัวแปร local
+    - static storage duration (อยู่จนกว่าจะสิ้นวุดการทำงานของโปรแกรม)
+       => extern
+       => static เช่น ตัวแปร global
+
+
+Separate Compilation การคอมไพล์แยกส่วน
+   วิธี 
+       gcc -c main.c 
+                    } เข้าด้วยกัน
+       gcc -c func.c
+       gcc main.o func.o -o main.exe => ลิ้ง
+
+
+Random Number Generator
+   rand() => สร้างเลขสุ่มที่เป็นจน.เต็มที่อยู่ระหว่าง 0 และ RAND_MAX (เป็นค่าคงที่ที่ถูกำหนดไว้ใน <stdio.h>)
+   Ex.
+      #include <stdio.h>
+      #include <stdlib.h>
+      int main()
+      { int i;
+        srand(10);
+        for (i=0; i < 10; i++)
+            printf("%d\n", rand()%6+1);
+      }
