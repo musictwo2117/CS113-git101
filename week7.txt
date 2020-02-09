@@ -1,0 +1,31 @@
+Week 7 : Pointers & Dynamic Memory Allocation
+
+เข้าถึง,จัดการ memory ใช้ pointer
+
+
+- Pointer เก็บค่าตน.(address) ในหน่วยความจำ หน่วยความจำคือค่าเต็มบวก เริ่มจาก 0
+
+
+Ex. pointer p อ้างอิง -> ตน.ที่เก็บค่า c
+
+    int c;
+    int *p;
+    p = &c;
+
+    * -> ใช้ในการเข้าถึงข้อมูลอ้างอิง
+    & -> หาตน.บนค.จำ
+
+- scanf = printf 
+  scanf -> รับข้อมูลผ่านคีย์บอร์ด
+  printf -> แสดงหน้าจอ
+
+  int input;
+  scanf("%d",&input);
+
+molloc() => จองและคืนพท.บนหน่วยค.จำ
+    #include <stdlib.h>
+    void *malloc(size_t n);
+    void *calloc(size_t n, size_t size);
+    void *realloc(void *ptr, size_t size);
+    void free(void *ptr);
+    
